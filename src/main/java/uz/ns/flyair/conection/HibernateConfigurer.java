@@ -7,6 +7,9 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
+import uz.ns.flyair.domain.User;
+import uz.ns.flyair.domain.air.AirPort;
+import uz.ns.flyair.domain.air.Plane;
 
 import java.util.Objects;
 import java.util.Properties;
@@ -55,9 +58,9 @@ public class HibernateConfigurer {
 //                Reflections reflections = new Reflections("uz.jl.java_ee.domains");
 //                reflections.get(SubTypes.of(TypesAnnotated.with(Entity.class)).asClass())
 //                        .forEach(sources::addAnnotatedClass);
-//                sources.addAnnotatedClass(AirPort.class);
-//                sources.addAnnotatedClass(Plane.class);
-//                sources.addAnnotatedClass(Users.class);
+                sources.addAnnotatedClass(AirPort.class);
+                sources.addAnnotatedClass(Plane.class);
+                sources.addAnnotatedClass(User.class);
 
                 // Create Metadata
                 Metadata metadata = sources.getMetadataBuilder().build();
