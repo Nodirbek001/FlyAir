@@ -1,5 +1,6 @@
 package uz.ns.flyair.domain;
 
+import antlr.Utils;
 import lombok.*;
 import uz.ns.flyair.Dto.UserDto;
 
@@ -27,8 +28,12 @@ public class User {
     public enum Role {
         DIRECTOR, MANAGER, USER;
     }
-
-    public static User toDomain(UserDto dto) {
-        return null;
+    public User toDomain() {
+        return User.builder()
+                .username(this.username)
+                .password(this.password)
+                .role(Role.USER)
+                .build();
     }
+
 }
